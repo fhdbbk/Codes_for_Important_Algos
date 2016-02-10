@@ -13,6 +13,6 @@ def genSets(universe, s):
         
 
 
-universe = ['a','b']
+universe = ['a','b','c']
 s = [[]]
 print genSets(universe, s)
