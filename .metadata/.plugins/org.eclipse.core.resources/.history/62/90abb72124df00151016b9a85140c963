@@ -1,0 +1,68 @@
+package linkedlists;
+
+public class LinkedList {
+
+	/**
+	 * @param args
+	 */
+	Node head = null;
+	
+	//Inserts at the end
+	public void insert(Object d){
+		Node temp1 = new Node(d);
+		if(head == null){
+			head = temp1;
+			return;
+		}
+		Node temp2 = head;
+		while(temp2.next != null){
+			temp2 = temp2.next;
+		}
+		temp2.next = temp1;
+	}
+	
+	//Inserts at the given position
+	public void insert(Object d, int position){
+		Node temp1 = new Node(d);
+		if(position == 1){
+			temp1.next = head;
+			head = temp1;
+			return;
+		}
+		Node temp2 = head;
+		for(int i = 1; i < position-1; i++){
+			temp2 = temp2.next;
+		}
+		temp1.next = temp2.next;
+		temp2.next = temp1;
+	}
+	
+	// Prints the integer data values in the list
+	public void printList(){
+		Node temp = head;
+		if(temp == null){
+			System.out.println("List is empty!");
+			return;
+		}
+		while(temp != null){
+			System.out.print((Integer)temp.data + "->"); 
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.insert(5);
+		list.printList();
+		list.insert(56);
+		list.printList();
+		list.insert(41);
+		list.printList();
+		list.insert(1, 1);
+		list.printList();
+		list.insert(22, 3);
+		list.printList();
+	}
+
+}

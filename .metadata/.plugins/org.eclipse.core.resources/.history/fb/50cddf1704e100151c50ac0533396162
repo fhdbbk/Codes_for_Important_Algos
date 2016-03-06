@@ -1,0 +1,26 @@
+package linkedlists;
+
+public class DoublyLinkedList {
+	
+	DNode head;
+	
+	public DoublyLinkedList(){
+		head = null;
+	}
+
+	public void insertAtHead(Object d){
+		DNode temp = new DNode(d);
+		if (head == null){
+			head = temp;
+			return;
+		}
+		temp.next = head;
+		head.prev = temp;
+		head = temp;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

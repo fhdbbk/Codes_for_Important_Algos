@@ -3,10 +3,12 @@ def genPrimeTable(n):
     pTable[0] = pTable[1] = False
     import math
     m = int(math.sqrt(n))+1
-    for j in range(2, m + 1):
-        if pTable[j]:
-            for k in range(j*j, n+1, j):
-                pTable[k] = False
+    for i in range(2, m):
+        if pTable[i]:
+            j = 2
+            while i*j <= n:
+                pTable[i*j] = False
+                j += 1
     return pTable
 
 n = 36
